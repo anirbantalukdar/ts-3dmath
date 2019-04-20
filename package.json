@@ -1,0 +1,43 @@
+{
+	"name": "ts-collection",
+	"version": "1.0.3",
+	"description": "",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"files": [
+		"lib/**/*"
+	],
+	"scripts": {
+		"build": "tsc",
+		"prepare": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/anirbantalukdar/ts-3dmath.git"
+	},
+	"keywords": [
+		"3d",
+		"math",
+		"typescript"
+	],
+	"author": "Anirban Talukdar",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/anirbantalukdar/ts-3dmath/issues"
+	},
+	"homepage": "https://github.com/anirbantalukdar/ts-3dmath#readme",
+	"devDependencies": {
+		"@types/chai": "4.1.7",
+		"@types/mocha": "5.2.6",
+		"@types/lodash": "^4.14.118",
+		"@types/assert": "1.4.2",
+		"chai": "^4.2.0",
+		"lodash": "^4.17.11",
+		"mocha": "^5.2.0",
+		"nyc": "13.3.0",
+		"ts-loader": "^5.3.1",
+		"ts-node": "^8.0.2",
+		"typescript": "^3.3.3",
+		"assert": "^1.4.1"
+	}
+}
