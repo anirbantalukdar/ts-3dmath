@@ -1,21 +1,21 @@
 import {Context} from './Context';
 import {Matrix2} from './Matrix2';
 import {Tolerance} from './Tolerance';
-import {Vector2} from './Vector2d';
+import {Vector2d} from './Vector2d';
 
 const f32 = Math.round;
 
-export class Point2 {
-	public static readonly kOrigin = new Point2(0.0, 0.0);
+export class Point2d {
+	public static readonly kOrigin = new Point2d(0.0, 0.0);
 
 	public x: number;
 	public y: number;
 
-	constructor(x?: number | Point2, y?: number) {
+	constructor(x?: number | Point2d, y?: number) {
 		if (arguments.length === 0) {
 			this.x = this.y = 0;
 		} else if (arguments.length === 1) {
-			const pt = x as Point2;
+			const pt = x as Point2d;
 			this.x = pt.x;
 			this.y = pt.y;
 		} else if (arguments.length === 2) {
@@ -40,8 +40,8 @@ export class Point2 {
 		this.y = y;
 	}
 	
-	public clone(): Point2 {
-		return new Point2(this.x, this.y);
+	public clone(): Point2d {
+		return new Point2d(this.x, this.y);
 	}
 
 	public set(x: number, y: number): void {
@@ -49,24 +49,24 @@ export class Point2 {
 		this.y = f32(y);
 	}
 
-	public distanceTo(pt: Point2): number {
+	public distanceTo(pt: Point2d): number {
 		const xDiff = this.x - pt.x;
 		const yDiff = this.y - pt.y;
 		return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
 	}
 
-	public subtract(pt: Point2): Vector2 {
-		return new Vector2(this.x - pt.x, this.y - pt.y);
+	public subtract(pt: Point2d): Vector2d {
+		return new Vector2d(this.x - pt.x, this.y - pt.y);
 	}
 
-	public addVector(vec: Vector2): Point2 {
+	public addVector(vec: Vector2d): Point2d{
 		this.x += vec.x;
 		this.y += vec.y;
 		return this;
 	}
 
-	public getAddVector(vec: Vector2): Point2 {
-		return new Point2(this.x, this.y).addVector(vec);
+	public getAddVector(vec: Vector2d): Point2d{
+		return new Point2d(this.x, this.y).addVector(vec);
 	}
 
 	public transformBy(xform: Matrix2): void {
@@ -77,8 +77,8 @@ export class Point2 {
 		this.y = y / w;
 	}
 
-	public getTransformBy(xform: Matrix2): Point2 {
-		let result = new Point2(this.x, this.y);
+	public getTransformBy(xform: Matrix2): Point2d {
+		let result = new Point2d(this.x, this.y);
 		result.transformBy(xform);
 		return result;
 	}

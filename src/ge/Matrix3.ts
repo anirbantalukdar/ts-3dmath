@@ -1,5 +1,5 @@
-import {Vector3} from './Vector3';
-import {Point3} from './Point3';
+import {Vector3d} from './Vector3d';
+import {Point3d} from './Point3d';
 import {Context} from './Context';
 import {Tolerance} from './Tolerance';
 
@@ -34,11 +34,11 @@ export class Matrix3 {
 		return null;
 	}
 
-	static rotation(angle: number, refAxis: Vector3, center = Point3.kOrigin): Matrix3 {
+	static rotation(angle: number, refAxis: Vector3d, center = Point3d.kOrigin): Matrix3 {
 		return null;
 	}
 
-	getCoordinateSystem(origin: Point3, xAxis: Vector3, yAxis: Vector3, zAxis: Vector3): Matrix3 {
+	getCoordinateSystem(origin: Point3d, xAxis: Vector3d, yAxis: Vector3d, zAxis: Vector3d): Matrix3 {
 		return null;
 	}
 

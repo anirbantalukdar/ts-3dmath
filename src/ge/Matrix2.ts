@@ -1,4 +1,4 @@
-import {Point2} from './Point2';
+import {Point2d} from './Point2d';
 
 const f32 = Math.round;
 
@@ -122,9 +122,9 @@ export class Matrix2 {
 	}
 
 
-	scaling(scale: number, refPoint?: Point2): Matrix2 {
+	scaling(scale: number, refPoint?: Point2d): Matrix2 {
 		if (!refPoint) {
-			refPoint = Point2.kOrigin;
+			refPoint = Point2d.kOrigin;
 		}
 		const mat = Matrix2.translation(refPoint.x, refPoint.y);
 		const scaleMat = new Matrix2();

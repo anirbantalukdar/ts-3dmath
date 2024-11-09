@@ -1,15 +1,15 @@
-import {Point2} from './Point2d';
+import {Point2d} from './Point2d';
 
-export class Bound2 {
-	private m_Min: Point2;
-	private m_Max: Point2;
+export class Bound2d {
+	private m_Min: Point2d;
+	private m_Max: Point2d;
 
 	constructor() {
-		this.m_Min = new Point2(999999, 999999);
-		this.m_Max = new Point2(-99999, -99999);
+		this.m_Min = new Point2d(999999, 999999);
+		this.m_Max = new Point2d(-99999, -99999);
 	}
 
-	addPoint(pt: Point2): Bound2 {
+	addPoint(pt: Point2d): Bound2d {
 		if (pt.x < this.m_Min.x) {
 			this.m_Min.x = pt.x;
 		}
@@ -26,11 +26,11 @@ export class Bound2 {
 		return this;
 	}
 
-	public getMin(): Point2 {
-		return new Point2(this.m_Min);
+	public getMin(): Point2d {
+		return new Point2d(this.m_Min);
 	}
 
-	public getMax(): Point2 {
-		return new Point2(this.m_Max);
+	public getMax(): Point2d {
+		return new Point2d(this.m_Max);
 	}
 }
