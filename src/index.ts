@@ -8,3 +8,4 @@ export * from './ge/Point2d';
 export * from './ge/Point3d';
 export * from './ge/Vector2d';
 export * from './ge/Vector3d';
+export * from './ge/Bound3d';
