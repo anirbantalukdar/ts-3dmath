@@ -69,6 +69,18 @@ export class Point2d {
 		return new Point2d(this.x, this.y).addVector(vec);
 	}
 
+	public scaleBy(scaleFactor: number, wrtpoint: Point2d = Point2d.kOrigin){
+		// TODO not satisfied wth this
+		let result = new Point2d(this.x, this.y);
+		result.x -= wrtpoint.x;
+		result.y -= wrtpoint.y;
+		result.x *= scaleFactor;
+		result.y *= scaleFactor;
+		result.x -= -wrtpoint.x;
+		result.y -= -wrtpoint.y;
+		return result;
+
+	}
 	public transformBy(xform: Matrix2): void {
 		const x = xform.entry(0, 0) * this.x + xform.entry(0, 1) * this.y + xform.entry(0, 2) * 1.0;
 		const y = xform.entry(1, 0) * this.x + xform.entry(1, 1) * this.y + xform.entry(1, 2) * 1.0;
